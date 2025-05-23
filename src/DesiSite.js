@@ -60,10 +60,24 @@ function OrderForm() {
   const [form, setForm] = useState({ name: "", phone: "", notes: "" });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("Order Submitted:", { ...form, cart });
+  e.preventDefault();
+
+  const response = await fetch("https://script.google.com/macros/s/AKfycbxiVLhiJNzoaEEaXtZEtLCeH_3A-C8aa0cUk5lzcYFEL2NAR19HcaFh8urgOFlWGkJg/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ ...form, cart }),
+  });
+
+  console.log("Order Submitted:", { ...form, cart });
+
+  if (response.ok) {
     setSubmitted(true);
-  };
+  } else {
+    alert("Error submitting order. Try again.");
+  }
+};
 
   if (submitted) {
     return (
