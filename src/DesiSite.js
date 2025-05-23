@@ -54,6 +54,63 @@ function Cart() {
     </div>
   );
 }
+function OrderForm() {
+  const { cart } = useContext(CartContext);
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", phone: "", notes: "" });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Order Submitted:", { ...form, cart });
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="bg-green-100 text-green-800 p-4 mt-6 rounded">
+        ✅ Thank you! Your order has been submitted.
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-white p-4 mt-10 rounded shadow">
+      <h2 className="text-2xl font-bold mb-4">Place Your Order</h2>
+      <div className="mb-2">
+        <label className="block text-sm font-medium">Name</label>
+        <input
+          required
+          type="text"
+          className="w-full border p-2 rounded mt-1"
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+        />
+      </div>
+      <div className="mb-2">
+        <label className="block text-sm font-medium">Phone</label>
+        <input
+          required
+          type="tel"
+          className="w-full border p-2 rounded mt-1"
+          value={form.phone}
+          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-medium">Notes (optional)</label>
+        <textarea
+          className="w-full border p-2 rounded mt-1"
+          value={form.notes}
+          onChange={(e) => setForm({ ...form, notes: e.target.value })}
+        />
+      </div>
+      <button type="submit" className="bg-[#D81B68] text-white px-6 py-2 rounded hover:bg-[#a8134f]">
+        Submit Order
+      </button>
+    </form>
+  );
+}
+
 export default function DesiSite() {
   const [cart, setCart] = useState([]);
 
