@@ -133,7 +133,7 @@ export default function DesiSite() {
       <main className="font-sans bg-[#EAD3C4] text-[#165F5D]">
         {/* Navbar */}
         <nav className="fixed top-0 left-0 w-full bg-white shadow z-50 px-6 py-4 flex justify-between items-center">
-          <img src="/logo.png" alt="Desi Logo" className="h-10" />
+          <img src="/desi-logo.png" alt="Desi-Logo" className="h-10" />
           <div className="space-x-4 hidden md:flex">
             <a href="#about" className="hover:text-[#D81B68]">About</a>
             <a href="#services" className="hover:text-[#D81B68]">Services</a>
