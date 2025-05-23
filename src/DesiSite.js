@@ -54,7 +54,6 @@ function Cart() {
     </div>
   );
 }
-
 export default function DesiSite() {
   const [cart, setCart] = useState([]);
 
@@ -77,7 +76,7 @@ export default function DesiSite() {
       <main className="font-sans bg-[#EAD3C4] text-[#165F5D]">
         {/* Navbar */}
         <nav className="fixed top-0 left-0 w-full bg-white shadow z-50 px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-[#D81B68]">DESI</div>
+          <img src="/logo.png" alt="Desi Logo" className="h-10" />
           <div className="space-x-4 hidden md:flex">
             <a href="#about" className="hover:text-[#D81B68]">About</a>
             <a href="#services" className="hover:text-[#D81B68]">Services</a>
@@ -86,18 +85,24 @@ export default function DesiSite() {
           </div>
         </nav>
 
-        {/* Hero */}
+        {/* Hero Section */}
         <section className="min-h-screen flex flex-col justify-center px-6 pt-32 bg-[#FAC03F]">
-          <h1 className="text-5xl md:text-6xl font-bold max-w-3xl">The Original Desi Naan Rolls</h1>
-          <p className="mt-4 text-lg">Modern Indian cooking in Wrocław</p>
-          <a href="#menu" className="mt-6 inline-block bg-[#D81B68] text-white px-6 py-3 rounded-xl hover:bg-[#a8134f]">View Menu</a>
+          <h1 className="text-5xl md:text-6xl font-bold max-w-4xl">
+            The Original Desi Naan Rolls, slingin’ HOT NAAN ROLLS at Hala Swiebodzki food court & Bar.
+          </h1>
+          <p className="mt-4 text-xl">Modern Indian cooking.</p>
+          <a href="#menu" className="mt-6 inline-block bg-[#D81B68] text-white px-6 py-3 rounded-xl hover:bg-[#a8134f]">
+            Place an Order
+          </a>
         </section>
 
-        {/* About */}
+        {/* About Us */}
         <section id="about" className="px-6 py-16 bg-white">
           <h2 className="text-4xl font-bold mb-6">About Us</h2>
-          <p className="mb-4">Desi was born in a dorm kitchen where Polish and Indian flavors met...</p>
-          <p className="mb-4">Late-night cooking turned into a mission: share Desi food with the world.</p>
+          <p className="mb-4">EST. 2024</p>
+          <p className="mb-4">Desi was born in the most unexpected of places—a cozy dorm kitchen where a Polish and an Indian came together, blending flavours and cultures...</p>
+          <p className="mb-4">What started as late-night cooking sessions for friends soon became a mission: to share the food we love with the world. We are rolling HOT NAAN ROLLS 365 days of the year.</p>
+          <p className="mb-4">We work closely with the suppliers to bring you the best.</p>
         </section>
 
         {/* Services */}
@@ -111,7 +116,7 @@ export default function DesiSite() {
           </ul>
         </section>
 
-        {/* Menu */}
+        {/* Menu Section */}
         <section id="menu" className="px-6 py-16 bg-white">
           <h2 className="text-4xl font-bold mb-10">Our Menu</h2>
           {Object.entries(menu).map(([category, items]) => (
@@ -127,13 +132,22 @@ export default function DesiSite() {
           <Cart />
         </section>
 
-        {/* Contact */}
+        {/* Contact Section */}
         <section id="contact" className="px-6 py-16 bg-[#FAC03F]">
           <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
-          <p className="mb-2">📍 Wrocław, pl. Orląt Lwowskich 20b</p>
-          <p className="mb-2">📞 +48 527633722</p>
+          <p className="mb-2">📍 pl. Orląt lwowskich 20b, Hala Swiebodzki food court & bar, Wrocław, Poland</p>
+          <p className="mb-2">📞 +48 527633722 / +48 669735744</p>
           <p className="mb-2">📧 desiwroclaw@gmail.com</p>
-          <p className="mb-2">🕒 Sun–Wed: 12–21 | Thu–Sat: 12–23:30</p>
+          <p className="mt-4 font-semibold">🕒 Opening Hours</p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 text-sm mt-2">
+            <li>Monday: 12:00–21:00</li>
+            <li>Tuesday: 12:00–21:00</li>
+            <li>Wednesday: 12:00–22:00</li>
+            <li>Thursday: 12:00–23:00</li>
+            <li>Friday: 12:00–23:00</li>
+            <li>Saturday: 12:00–23:00</li>
+            <li>Sunday: 12:00–21:00</li>
+          </ul>
         </section>
 
         {/* Footer */}
